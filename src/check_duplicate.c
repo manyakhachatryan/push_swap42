@@ -6,13 +6,14 @@ void check_duplicate(int *a, int len){
 
   
     i = 0;
-while(i<=len){
+while(i<len){
     j = 0;
-while(j<=len){
-    printf("a[i]=>%d\n", j);
+while(j<len){
+ //   printf("a[i]=>%d\n", j);
     if(i!=j){
+        // printf("%d=> ", a[i]);
         if(a[i] == a[j]){
-            printf("ERROR");  // [ 1 ,2 , 214748 ,1 ,-5, 1]
+           printf("ERRORHIIII");  // [ 1 ,2 , 214748 ,1 ,-5, 1]
             exit(0);
         }
      

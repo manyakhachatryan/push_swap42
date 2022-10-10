@@ -29,11 +29,13 @@ int	ft_atoi( char *str)
 
 	if(result * n > 2147483647 ||  result * n < -2147483648)
  { 
-	 printf("%ld\n",result*n);
+
         printf("error int size\n");
 		exit(0);
  }
-	else {	 	return (result * n);
-	printf("inside else\n");
+	else {	 	
+	
+		return (result * n);
+
 	}
 }

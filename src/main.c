@@ -3,7 +3,7 @@
 #include "../includes/push_swap.h"
 
 int	main(int a_nb, char *str[])
-{
+{ 
 	char *result = NULL;
 	if (a_nb > 2)
 	{
@@ -14,7 +14,9 @@ int	main(int a_nb, char *str[])
 		int len  = matrix_length(map);
 		int * a =NULL;
  		a = char_to_int(len, map);
+
 		check_duplicate(a, len);
+		arr_to_list(a, len);
 	}
  	//sleep(100);
  	return (0);
