@@ -25,6 +25,7 @@ struct s_list
   // int count;
   int data;
   t_list *next;
+  int index;
 };
 
 
@@ -43,10 +44,10 @@ int     *char_to_int(int len, char **map);
 int     ft_atoi( char *str);
 int     matrix_length(char **map);
 void    check_duplicate(int *a, int len);
-void    arr_to_list(int *a, int len);
-void  sa(t_list *list);
-void  sb(t_list *list);
-void  ss(t_list *a_list, t_list *b_list);
+int    arr_to_list(int *a, int len);
+void  sa(t_list **list);
+void  sb(t_list **list);
+void  ss(t_list **a_list, t_list **b_list);
 void pa(t_list **a_list, t_list **b_list);
 void pb(t_list **a_list, t_list **b_list);
 void ra_rb(t_list **list, int i);
@@ -55,5 +56,10 @@ int cat_list_beg(t_list  **list);
 void rr(t_list **list_a, t_list **list_b);
 void rra_rrb(t_list **list, int i);
 void rrr(t_list **list_a, t_list **list_b);
-
+void	index_list(t_list **list, int len);
+void sort(t_list **stack_a, t_list **stack_b, int len);
+void  sort_2(t_list **stack_a);
+void  sort_3(t_list **stack_a);
+void  sort_4(t_list **stack_a,t_list **stack_b, int len);
+int max_list(t_list **list);
 #endif

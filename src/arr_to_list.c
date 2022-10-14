@@ -6,13 +6,43 @@
 /*   By: manykhac <manykhac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 20:58:53 by manykhac          #+#    #+#             */
-/*   Updated: 2022/10/10 21:00:15 by manykhac         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:21:55 by manykhac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void arr_to_list(int *a, int len)
+void	index_list(t_list **list, int len)
+{
+	t_list *node;
+	t_list *max;
+	int i;
+	
+	i = 0;
+	node = (*list)->next;
+	max = *list;
+	while(i < len)
+	{
+		while(node != NULL) 
+		{
+			if(max->data > node->data && node->index == -1)
+				max = node;
+			node = node->next;
+		}
+		max->index = i;
+		max =*list;
+		node = *list;
+		i++;
+		while(i < len && max->index != -1)
+			max = max->next;
+		
+	}
+
+  
+}
+
+
+int arr_to_list(int *a, int len)
 {
   t_parts *node;
   t_list  *stack_a;
@@ -34,7 +64,7 @@ void arr_to_list(int *a, int len)
   while(i < len)
   {   
      stack_a->data = a[i];
-
+     stack_a->index = -1;
       if(i+1 !=len)
       stack_a->next =  malloc(sizeof(t_list));
       else
@@ -48,30 +78,26 @@ void arr_to_list(int *a, int len)
  }
 
  stack_a = node->head;
-// pb(&stack_a, &stack_b);
-// pb(&stack_a, &stack_b);
-// sa(stack_a);
-// sb(stack_b);
-//ra_rb(&stack_b, 2);
- //rr(&stack_a, &stack_b);
- rra_rrb(&stack_a, 1);
 
 
 
 
-while (stack_b != NULL) {
-    printf("stack_b=>%d\n", stack_b->data);
-   stack_b = stack_b->next;
+
+index_list(&stack_a, len);
+sort(&stack_a, &stack_b, len);
+
+while ((stack_b) != NULL) {
+    printf("stack_b=>%d\n", (stack_b)->data);
+  (stack_b) = (stack_b)->next;
   }
 
-  while (stack_a != NULL) {
-    printf("stack_a=>%d\n", stack_a->data);
- stack_a = stack_a->next;
+  while ((stack_a) != NULL) {
+    printf("stack_a=>%d\n", (stack_a)->data);
+     // printf("stack_a====>index=>%d\n", (stack_a)->index);
+   (stack_a) = (stack_a)->next;
   }
 
-
-
-
+return (0);
 }
 
 

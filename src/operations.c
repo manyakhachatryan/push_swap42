@@ -16,39 +16,39 @@ return num;
 
 }
 
-void  sa(t_list *list){   //ok
+void  sa(t_list **list){   //ok
 
 int num;
-if(list->next!=NULL){
-num = list->data;
-list->data = list->next->data;
-list->next->data = num;
+if((*list)->next!=NULL){
+num = (*list)->data;
+(*list)->data = (*list)->next->data;
+(*list)->next->data = num;
 write(1, "sa\n", 3);
 }
 }
 
 
-void  sb(t_list *list){
+void  sb(t_list **list){
 
 int num;
-if(list->next!=NULL){
+if((*list)->next!=NULL){
 
-num = list->data;
-list->data = list->next->data;
-list->next->data = num;
+num = (*list)->data;
+(*list)->data = (*list)->next->data;
+(*list)->next->data = num;
 write(1, "sb\n", 3);
 }
 }
 
-void  ss(t_list *a_list, t_list *b_list){
+void  ss(t_list **a_list, t_list **b_list){
 int a_num;
 int b_num;
-a_num = a_list->data;
-a_list->data = a_list->next->data;
-a_list->next->data = a_num;
-b_num = b_list->data;
-b_list->data = b_list->next->data;
-b_list->next->data = b_num;
+a_num = (*a_list)->data;
+(*a_list)->data = (*a_list)->next->data;
+(*a_list)->next->data = a_num;
+b_num = (*b_list)->data;
+(*b_list)->data = (*b_list)->next->data;
+(*b_list)->next->data = b_num;
 
 write(1, "ss\n", 3);
 }

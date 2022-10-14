@@ -2,6 +2,9 @@
 
 #include "../includes/push_swap.h"
 
+
+
+
 int	main(int a_nb, char *str[])
 { 
 	char *result = NULL;
@@ -16,7 +19,9 @@ int	main(int a_nb, char *str[])
  		a = char_to_int(len, map);
 
 		check_duplicate(a, len);
+		//arr_to_index(a, len);
 		arr_to_list(a, len);
+	
 	}
  	//sleep(100);
  	return (0);
