@@ -10,14 +10,14 @@ char	*ft_first_join(char *str)
 
 	j = 0;
 	len = ft_strlen(str);
-	arr = malloc(len + 2);
+	arr = malloc(len + 1);
 	while (str[j])
 	{
 		arr[j] = str[j];
 		j++;
 	}
 	arr[len] = ' ';
-	arr[len + 2] = '\0';
+	arr[len + 1] = '\0';
 	return (arr);
 }
 
@@ -34,6 +34,12 @@ char	*ft_join_str(char **str)
 		arr = ft_strjoin(arr, str[i]);
 		i++;
 	}
+
+// 	int k = 0;
+// 	while(arr[k]){
+// printf("%d\n", arr[k]);
+// k++;
+// 	}
 
 	return (arr);
 }

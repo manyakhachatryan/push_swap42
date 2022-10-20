@@ -6,7 +6,7 @@
 /*   By: manykhac <manykhac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 20:58:53 by manykhac          #+#    #+#             */
-/*   Updated: 2022/10/14 15:21:55 by manykhac         ###   ########.fr       */
+/*   Updated: 2022/10/20 23:16:02 by manykhac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,42 @@
 void	index_list(t_list **list, int len)
 {
 	t_list *node;
-	t_list *max;
+	t_list *min;
 	int i;
 	
 	i = 0;
 	node = (*list)->next;
-	max = *list;
+	min = *list;
 	while(i < len)
 	{
 		while(node != NULL) 
 		{
-			if(max->data > node->data && node->index == -1)
-				max = node;
+			if(min->data > node->data && node->index == -1)
+				min = node;
 			node = node->next;
 		}
-		max->index = i;
-		max =*list;
+		min->index = i;
+		min =*list;
 		node = *list;
 		i++;
-		while(i < len && max->index != -1)
-			max = max->next;
+		while(i < len && min->index != -1)
+			min = min->next;
 		
 	}
 
   
+}
+
+
+void free_list(t_list **stack_a){
+  t_list *next;
+	//  print_quantity();
+	while ((*stack_a) != NULL)
+   {
+       next = (*stack_a)->next;
+       free(*stack_a);
+       (*stack_a) = next;
+   }
 }
 
 
@@ -56,8 +68,7 @@ int arr_to_list(int *a, int len)
                
   node = malloc(sizeof(t_parts));
   node->head = malloc(sizeof(t_list));
-  node->tail = malloc(sizeof(t_list));
-  printf("node===>%p\n", node->head); // es petqa misht mna nuyny
+
 
   stack_a = node->head;
 
@@ -69,7 +80,7 @@ int arr_to_list(int *a, int len)
       stack_a->next =  malloc(sizeof(t_list));
       else
       {
-        node->tail = stack_a;
+     
         break;
       }
       stack_a = stack_a->next;
@@ -86,17 +97,22 @@ int arr_to_list(int *a, int len)
 index_list(&stack_a, len);
 sort(&stack_a, &stack_b, len);
 
-while ((stack_b) != NULL) {
-    printf("stack_b=>%d\n", (stack_b)->data);
-  (stack_b) = (stack_b)->next;
-  }
+// while ((stack_b) != NULL) {
+//     printf("stack_b=>%d\n", (stack_b)->index);
+//   (stack_b) = (stack_b)->next;
+//   }
 
-  while ((stack_a) != NULL) {
-    printf("stack_a=>%d\n", (stack_a)->data);
-     // printf("stack_a====>index=>%d\n", (stack_a)->index);
-   (stack_a) = (stack_a)->next;
-  }
+  // while ((stack_a) != NULL) {
+  //   //printf("stack_a=>%d\n", (stack_a)->data);
+  //   printf("stack_a=====>%d data = %d\n", (stack_a)->index, (stack_a)->data);
+  //  (stack_a) = (stack_a)->next;
+  // }
 
+
+  free_list(&stack_a);
+ 
+free(node);
+ 
 return (0);
 }
 

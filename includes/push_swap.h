@@ -8,32 +8,24 @@
 
 typedef struct s_parts  t_parts;
 typedef struct s_list   t_list;
-// typedef struct s_data   t_data;
+
 
 
 struct s_parts 
 {
-
  t_list *head;
-  t_list *tail;
 };
 
 struct s_list 
 {
-  // t_list *head;
-  // t_list *tail;
-  // int count;
+
   int data;
   t_list *next;
   int index;
 };
 
 
-// struct s_data
-// {
-//   t_list *stack_a;
-//   t_list *stack_b;
-// };
+
 
 int		ft_strlen(char *str);
 char	*ft_join_str(char **str);
@@ -61,5 +53,10 @@ void sort(t_list **stack_a, t_list **stack_b, int len);
 void  sort_2(t_list **stack_a);
 void  sort_3(t_list **stack_a);
 void  sort_4(t_list **stack_a,t_list **stack_b, int len);
+void  sort_5(t_list **stack_a,t_list **stack_b, int len);
+void sort_6(t_list **stack_a, t_list **stack_b,int n);
 int max_list(t_list **list);
+void fill_a(t_list **stack_a,t_list **stack_b, int len);
+int	is_sorted(int *arr, int len);
+void free_list(t_list **stack_a);
 #endif

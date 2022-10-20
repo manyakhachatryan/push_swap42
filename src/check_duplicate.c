@@ -13,7 +13,10 @@ while(j<len){
     if(i!=j){
         // printf("%d=> ", a[i]);
         if(a[i] == a[j]){
-           printf("ERRORHIIII");  // [ 1 ,2 , 214748 ,1 ,-5, 1]
+            
+            write(2, "ERROR\n", 6);
+        printf("2\n");
+
             exit(0);
         }
      

@@ -29,8 +29,9 @@ int	ft_atoi( char *str)
 
 	if(result * n > 2147483647 ||  result * n < -2147483648)
  { 
+        printf("3\n");
 
-        printf("error int size\n");
+        write(2, "ERROR\n", 6);
 		exit(0);
  }
 	else {	 	

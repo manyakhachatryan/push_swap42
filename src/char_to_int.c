@@ -17,7 +17,9 @@ while(map[i]){
    j++;
  }
  if(j>16){
-   printf("ERROR");
+   printf("4\n");
+   write(2, "ERROR\n", 6);
+
    exit(0);
  }
 

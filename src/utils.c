@@ -33,3 +33,21 @@ char	*ft_strjoin(char *str_main, char *str_copy)
 		free(str_main);
 	return (str);
 }
+
+
+
+int	is_sorted(int *arr, int len)
+{
+	int	i;
+
+	i = 0;
+	if (len == 1 || len == 0)
+		return (1);
+	while (i < len - 1)
+	{
+		if (arr[i] > arr[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
+}
