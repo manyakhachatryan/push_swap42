@@ -59,4 +59,9 @@ int max_list(t_list **list);
 void fill_a(t_list **stack_a,t_list **stack_b, int len);
 int	is_sorted(int *arr, int len);
 void free_list(t_list **stack_a);
+
+
+
+
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: manykhac <manykhac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 20:45:40 by manykhac          #+#    #+#             */
-/*   Updated: 2022/10/20 22:41:50 by manykhac         ###   ########.fr       */
+/*   Updated: 2022/10/23 20:03:34 by manykhac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,56 @@
 void fill_a(t_list **stack_a,t_list **stack_b, int len)
 {
 
-	int max;
-	while((*stack_b)!=NULL)
+int	max;
+
+	max = 0;
+	while (*stack_b)
 	{
-		max= max_list(stack_b);
-		if(max <= len/2)
+		max = max_list(stack_b);
+		if (max <= len / 2)
 		{
-			while(max>=1){
+			while (max-- >= 1)
 				ra_rb(stack_b, 2);
-				max--;
-		}
 			pa(stack_a, stack_b);
 			len--;
-		} else if(max >= len/2){
-			while(len-max){
-				rra_rrb(stack_b,2);
+		}
+		else if (max > len / 2)
+		{
+			while (len - max)
+			{
+				rra_rrb(stack_b, 2);
 				max++;
 			}
+			pa(stack_a, stack_b);
+			len--;
 		}
+	}
 
 	}
-}
+
+
+	// int max;
+	// max = 0;
+	// while(*stack_b)
+	// {
+	// 	max= max_list(stack_b);
+	// 	if(max <= len/2)
+	// 	{
+	// 		while(max-->=1)
+	// 			ra_rb(stack_b, 2);
+	// 			pa(stack_a, stack_b);
+	// 		len--;
+		
+		
+	// 	} else if(max >= len/2){
+	// 		while(len-max){
+	// 			rra_rrb(stack_b,2);
+	// 			max++;
+	// 		}
+	// 	}
+
+	// }
+
 
 int max_list(t_list **list){
 	
