@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   atoi.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: manykhac <manykhac@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/23 21:27:11 by manykhac          #+#    #+#             */
+/*   Updated: 2022/10/24 20:06:13 by manykhac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 int	ft_atoi( char *str)
 {
-	int	i;
-	int	n;
+	int			i;
+	int			n;
 	long int	result;
 
 	result = 0;
@@ -11,9 +23,6 @@ int	ft_atoi( char *str)
 	i = 0;
 	if (!str)
 		return (0);
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
-		i++;
 	if (str[i] == '-')
 	{
 		n = n * -1;
@@ -26,17 +35,7 @@ int	ft_atoi( char *str)
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-
-	if(result * n > 2147483647 ||  result * n < -2147483648)
- { 
-        printf("3\n");
-
-        write(2, "ERROR\n", 6);
-		exit(0);
- }
-	else {	 	
-	
-		return (result * n);
-
-	}
+	if (result * n > 2147483647 || result * n < -2147483648)
+		error();
+	return (result * n);
 }

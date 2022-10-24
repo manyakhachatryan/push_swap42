@@ -1,9 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   matrixlength.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: manykhac <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 14:08:13 by manykhac          #+#    #+#             */
+/*   Updated: 2022/10/24 14:09:00 by manykhac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
-int matrix_length(char **map){
-int  i = 0;
-while(map[i]){
-    i++;
-}
-//printf("%d", i);
-return i;
+
+int	matrix_length(char **map)
+{
+	int	i;
+
+	i = 0;
+	while (map[i])
+	{
+		i++;
+	}
+	return (i);
 }

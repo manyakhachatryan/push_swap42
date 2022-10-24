@@ -1,10 +1,20 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   make_arr.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: manykhac <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 14:06:25 by manykhac          #+#    #+#             */
+/*   Updated: 2022/10/24 14:07:57 by manykhac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 char	*ft_first_join(char *str)
-{	
-	int		len ;
+{
+	int		len;
 	char	*arr;
 	int		j;
 
@@ -34,12 +44,5 @@ char	*ft_join_str(char **str)
 		arr = ft_strjoin(arr, str[i]);
 		i++;
 	}
-
-// 	int k = 0;
-// 	while(arr[k]){
-// printf("%d\n", arr[k]);
-// k++;
-// 	}
-
 	return (arr);
 }

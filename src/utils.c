@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: manykhac <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 14:10:12 by manykhac          #+#    #+#             */
+/*   Updated: 2022/10/24 14:13:45 by manykhac         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 int	ft_strlen(char *str)
 {
 	int	i;
 
-	i = -1;
-	while (str[++i]);
-	
+	i = 0;
+	while (str[i])
+		i++;
 	return (i);
 }
 
@@ -16,7 +28,7 @@ char	*ft_strjoin(char *str_main, char *str_copy)
 	int		j;
 	int		len;
 	char	*str;
-	
+
 	i = -1;
 	j = -1;
 	len = ft_strlen(str_main) + ft_strlen(str_copy);
@@ -33,8 +45,6 @@ char	*ft_strjoin(char *str_main, char *str_copy)
 		free(str_main);
 	return (str);
 }
-
-
 
 int	is_sorted(int *arr, int len)
 {
